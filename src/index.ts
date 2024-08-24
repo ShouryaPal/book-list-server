@@ -12,7 +12,7 @@ const app = express();
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URL as string  );
+    await mongoose.connect(process.env.MONGO_URL as string);
     console.log("Database is connected successfully!");
   } catch (err) {
     console.error("Database connection error:", err);
@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://book-list-client-psi.vercel.app/",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
